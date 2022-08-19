@@ -5,7 +5,7 @@
 # 5. Must have the name of a continent
 # 6. Must have exactly 22 digits
 
-def user_password():
+def user_input_password():
   password = input(
     """
     1. Must have at least one punctuation mark
@@ -34,4 +34,8 @@ def check_punctuation(password):
       has_punctuation = True
   
   print(has_punctuation)
+
+
+password = user_input_password()
+rule_1 = check_punctuation(password)
       
