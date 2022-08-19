@@ -22,20 +22,37 @@ def user_input_password():
   
   return password
 
-
 def check_punctuation(password):
   has_punctuation = False
-  punctuation =  [".", "!", "?", ";", ",", "-"]
+  
+  # Below we made a "list" of punctuation marks
+  punctuation =  [
+    ".", "!", "?", ";", ",", "-",":","—","[","]",
+    "(",")","{","}","'",'"',"..."
+    ]
   
   for char in password:
-    print(char)
-
+   
     if char in punctuation:
+      print(char)
       has_punctuation = True
+      break
   
-  print(has_punctuation)
-
-
-password = user_input_password()
-rule_1 = check_punctuation(password)
+  print(f"password has punctuation: {has_punctuation}")
+  
+def check_prime(password):
+  has_prime = False
+  for char in password:
+    if char.isdigit():
+      char = int(char)
+      half_char = char // 2
       
+      for val in range(2, half_char):
+        if char % val == 0:
+          has_prime = True
+          break
+        print(val)
+
+# password = user_input_password()
+# rule_1 = check_punctuation(password)
+# rule_2 = check_prime(password)
